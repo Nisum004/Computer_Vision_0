@@ -70,4 +70,5 @@ DAY_2
                 iii. draw rectangle on each contours
                     cv2.rectangle(img, (x1, y1), (x1+w, y1+h), (255,0,0), 2)
 
+    COLOR DETECTION
 
