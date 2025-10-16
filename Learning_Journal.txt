@@ -1,4 +1,5 @@
 LEARNING OPEN CV
+IDE: PYCHARM
 
 DAY_1
     1.What are images
@@ -10,25 +11,48 @@ DAY_1
 
     3. Basic Operations
         i. Crop image
-        cropped_img = img[y_start:y_end, x_start:x_end]
+            cropped_img = img[y_start:y_end, x_start:x_end]
         ii. Resize image
-        resized_img = cv2.resize(img, (640, 480))
+            resized_img = cv2.resize(img, (640, 480))
 DAY_2
     4. ColorSpaces
         i. Convert BGR2RGB , BGR2HSV , BGR2GRAY
 
     5. Image Blurring
-        each pixel of blur is the average of all surrounding pixels
+            each pixel of blur is the average of all surrounding pixels
         i.Classical Blur
-        cv2.blur(img, (k_size,k_size))
+            cv2.blur(img, (k_size,k_size))
         ii. Gaussian Blur
-        cv2.Gaussian_blur(img, (k_size,k_size), 3)
+            cv2.Gaussian_blur(img, (k_size,k_size), 3)
         iii. Median Blur
-        cv2.median_blur(img, k_size)
-        * also removes noise
+            cv2.median_blur(img, k_size)
+            * also removes noise
 
     6. Remove Noise
 
-    7.THRESHOLDING
+    7. THRESHOLDING
+        i. Global threshold (for entire image at once)
+            ret, thresh = cv2.threshold(img_gray, 26, 255, cv2.THRESH_BINARY)
+            * img->gray->thresh->blur->thresh
+        ii. Adaptive Threshold (for each individual pixels)
+            thresh = cv2.adaptiveThreshold(img_gray,cv2._ADAPTIVE_THRESHOLD_MEAN_C,cv2.THRESH_BINARY, 21, 30)
+
+    8. EDGE DETECTION
+        i.canny edge detector
+            img_edge = cv2.Canny(img,100,200)
+        ii. Erode edges
+            img_edge_e = cv2.erode(img_edge_d, np.ones((4,4), dtype = np.int8)) # make the white border thinner
+        iii. dilate edges
+            img_edge_d = cv2.dilate(img_edge, np.ones((3,3), dtype = np.int8)) # make the white border thicker
+
+    9.  DRAWINGS
+        i. Line
+            cv2.line(img, (0,0), (612,490), (255,255,0), 5) # start point, end point, color, width
+        ii. Rectangle
+            cv2.rectangle(img, (100,100), (500,300), (0,255), 2)   # -1 -> color filled rectangle
+        iii. Circle
+            cv2.circle(img, (306,245), 100, (255, 0, 0), -1)  # img, center, radius, color, width
+        iv. Text
+
 
 
