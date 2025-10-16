@@ -1,0 +1,34 @@
+LEARNING OPEN CV
+
+DAY_1
+    1.What are images
+
+    2. Input/Output
+        i. i/o_image
+        ii. i/o_video
+        iii. i/o_webcam
+
+    3. Basic Operations
+        i. Crop image
+        cropped_img = img[y_start:y_end, x_start:x_end]
+        ii. Resize image
+        resized_img = cv2.resize(img, (640, 480))
+DAY_2
+    4. ColorSpaces
+        i. Convert BGR2RGB , BGR2HSV , BGR2GRAY
+
+    5. Image Blurring
+        each pixel of blur is the average of all surrounding pixels
+        i.Classical Blur
+        cv2.blur(img, (k_size,k_size))
+        ii. Gaussian Blur
+        cv2.Gaussian_blur(img, (k_size,k_size), 3)
+        iii. Median Blur
+        cv2.median_blur(img, k_size)
+        * also removes noise
+
+    6. Remove Noise
+
+    7.THRESHOLDING
+
+

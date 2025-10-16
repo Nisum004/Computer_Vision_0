@@ -1,6 +1,6 @@
 import cv2
 import os
-import webcam
+
 
 # read webcam
 webcam = cv2.VideoCapture(0) # 1,2 if more than one webcam
