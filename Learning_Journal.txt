@@ -54,5 +54,20 @@ DAY_2
             cv2.circle(img, (306,245), 100, (255, 0, 0), -1)  # img, center, radius, color, width
         iv. Text
 
+    10. Contours
+        Finding white object from black background
+        gray -> threshold -> findContour()
+        for cnt in contours:
+            if cv2.contourArea(cnt)>100:
+
+                i. draw contours on any image
+                    cv2.drawContours(img, [cnt], -1, (0,255,0), 1)
+                    cv2.drawContours(img2, [cnt], -1, (0, 255, 0), 1)
+
+                ii. calculate bounding rect
+                    x1, y1, w, h = cv2.boundingRect(cnt)
+
+                iii. draw rectangle on each contours
+                    cv2.rectangle(img, (x1, y1), (x1+w, y1+h), (255,0,0), 2)
 
 
