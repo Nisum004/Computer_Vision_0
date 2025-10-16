@@ -1,0 +1,4 @@
+opencv-python
+numpy
+matplotlib
+Pillow == 10.4.0
