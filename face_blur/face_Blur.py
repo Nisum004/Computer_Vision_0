@@ -6,8 +6,6 @@ import time
 
 filePath = '../data/video2.mp4'
 
-
-
 def process_img(img, face_detection):
 
     H, W, _ = img.shape  # _ = no of channel usually 3 for BGR
@@ -67,14 +65,9 @@ with mp_face_detection.FaceDetection(model_selection=0,min_detection_confidence=
         frame_height, frame_width = frame.shape[:2]
         output_video = cv2.VideoWriter(os.path.join(saved_path, 'video_output.mp4'),
                                        cv2.VideoWriter_fourcc(*'mp4v'), 30, (frame_width,frame_height))
-        prev_time = time.time()
         while ret:
             frame = process_img(frame, face_detection)
-            curr_time = time.time()
-            fps = 1 / (curr_time - prev_time)
-            prev_time = curr_time
-            cv2.putText(frame, f'FPS: {int(fps)}', (20, 40),
-                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
+
             output_video.write(frame)
 
             cv2.imshow("Processing", frame)
