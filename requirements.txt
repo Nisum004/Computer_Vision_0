@@ -3,3 +3,11 @@ numpy
 matplotlib
 Pillow == 10.4.0
 mediapipe
+scikit-learn
+scikit-image
+torch
+torchvision
+torchaudio
+numpy
+opencv-python
+mediapipe
