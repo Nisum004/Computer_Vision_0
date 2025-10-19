@@ -11,3 +11,5 @@ torchaudio
 numpy
 opencv-python
 mediapipe
+img2vec-pytorch==1.0.1
+split-folders
